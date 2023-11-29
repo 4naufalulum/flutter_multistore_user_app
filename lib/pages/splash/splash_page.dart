@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fic7_app/pages/splash/widget/splash_painter.dart';
 
-import '../utils/images.dart';
-import '../utils/color_resources.dart';
-import 'widget/splash_painter.dart';
+import '../../utils/color_resources.dart';
+import '../../utils/images.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fic7_app/pages/base_widgets/button/custom_button.dart';
-import 'package:flutter_fic7_app/pages/base_widgets/text_field/custom_password_textfield.dart';
-import 'package:flutter_fic7_app/pages/base_widgets/text_field/custom_textfield.dart';
 import 'package:flutter_fic7_app/pages/dashboard/dashboard_page.dart';
-import 'package:flutter_fic7_app/pages/utils/color_resources.dart';
-import 'package:flutter_fic7_app/pages/utils/custom_themes.dart';
-import 'package:flutter_fic7_app/pages/utils/dimensions.dart';
+
+import '../../../utils/color_resources.dart';
+import '../../../utils/custom_themes.dart';
+import '../../../utils/dimensions.dart';
+import '../../base_widgets/button/custom_button.dart';
+import '../../base_widgets/text_field/custom_password_textfield.dart';
+import '../../base_widgets/text_field/custom_textfield.dart';
 
 class SignInWidget extends StatefulWidget {
   const SignInWidget({Key? key}) : super(key: key);

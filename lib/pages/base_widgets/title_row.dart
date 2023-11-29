@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_fic7_app/pages/utils/color_resources.dart';
-import 'package:flutter_fic7_app/pages/utils/custom_themes.dart';
-import 'package:flutter_fic7_app/pages/utils/dimensions.dart';
-import 'package:flutter_fic7_app/pages/utils/images.dart';
+import 'package:flutter_fic7_app/utils/color_resources.dart';
+import 'package:flutter_fic7_app/utils/custom_themes.dart';
+import 'package:flutter_fic7_app/utils/dimensions.dart';
+import 'package:flutter_fic7_app/utils/images.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 

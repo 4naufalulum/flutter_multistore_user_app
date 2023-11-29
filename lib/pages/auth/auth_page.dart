@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fic7_app/pages/auth/widgets/sign_in_widget.dart';
 import 'package:flutter_fic7_app/pages/auth/widgets/sign_up_widget.dart';
-import 'package:flutter_fic7_app/pages/utils/color_resources.dart';
-import 'package:flutter_fic7_app/pages/utils/custom_themes.dart';
-import 'package:flutter_fic7_app/pages/utils/dimensions.dart';
-import 'package:flutter_fic7_app/pages/utils/images.dart';
+
+import '../../utils/color_resources.dart';
+import '../../utils/custom_themes.dart';
+import '../../utils/dimensions.dart';
+import '../../utils/images.dart';
 
 class AuthPage extends StatefulWidget {
   final int initialPage;
@@ -105,7 +106,6 @@ class _AuthPageState extends State<AuthPage> {
                   child: PageView.builder(
                     itemCount: 2,
                     controller: pageController,
-                    // ignore: body_might_complete_normally_nullable
                     itemBuilder: (context, index) {
                       if (isLoginPage) {
                         return const SignInWidget();

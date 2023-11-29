@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fic7_app/pages/utils/custom_themes.dart';
-import 'package:flutter_fic7_app/pages/utils/dimensions.dart';
+import 'package:flutter_fic7_app/utils/custom_themes.dart';
+import 'package:flutter_fic7_app/utils/dimensions.dart';
 
 
 class CustomButton extends StatelessWidget {
