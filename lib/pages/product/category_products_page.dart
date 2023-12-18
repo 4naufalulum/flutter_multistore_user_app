@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_fic7_app/bloc/products/products_bloc.dart';
-import 'package:flutter_fic7_app/pages/base_widgets/custom_app_bar.dart';
-import 'package:flutter_fic7_app/pages/home/widgets/product_item_widget.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
 
 import '../../utils/color_resources.dart';
 import '../../utils/dimensions.dart';
+import '../base_widgets/custom_app_bar.dart';
+import '../home/widgets/product_item_widget.dart';
 
 class CategoryProductsPage extends StatefulWidget {
   const CategoryProductsPage({

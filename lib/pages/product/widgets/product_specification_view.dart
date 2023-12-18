@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fic7_app/pages/base_widgets/title_row.dart';
 
-import '../../../utils/dimensions.dart';
+import '../../../../utils/dimensions.dart';
 
 class ProductSpecification extends StatelessWidget {
   final String productSpecification;

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_fic7_app/data/models/product_response_model.dart';
 
 import '../../utils/custom_themes.dart';
