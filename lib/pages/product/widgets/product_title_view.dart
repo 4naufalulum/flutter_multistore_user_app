@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_fic7_app/data/models/product_response_model.dart';
 import 'package:flutter_fic7_app/utils/price_ext.dart';
 
-import '../../../utils/color_resources.dart';
-import '../../../utils/custom_themes.dart';
-import '../../../utils/dimensions.dart';
+import '../../../../utils/color_resources.dart';
+import '../../../../utils/custom_themes.dart';
+import '../../../../utils/dimensions.dart';
 
 class ProductTitleView extends StatelessWidget {
   final Product product;

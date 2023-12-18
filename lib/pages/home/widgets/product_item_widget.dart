@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fic7_app/data/models/product_response_model.dart';
-import 'package:flutter_fic7_app/product/product_detail.dart';
+import 'package:flutter_fic7_app/pages/product/product_detail.dart';
 
 
 import 'package:flutter_fic7_app/utils/price_ext.dart';
