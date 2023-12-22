@@ -67,8 +67,7 @@ class CartPageState extends State<CartPage> {
                           },
                         );
                         return Text(
-                          // ignore: unnecessary_brace_in_string_interps
-                          '${totalPrice}'.formatPrice(),
+                          '$totalPrice'.formatPrice(),
                           style: titilliumSemiBold.copyWith(
                               color: Theme.of(context).primaryColor,
                               fontSize: Dimensions.fontSizeLarge),
@@ -80,32 +79,67 @@ class CartPageState extends State<CartPage> {
               ],
             ))),
             Builder(
-              builder: (context) => InkWell(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return const CheckoutPage();
-                  }));
+              builder: (context) => BlocBuilder<CheckoutBloc, CheckoutState>(
+                builder: (context, state) {
+                  return state.maybeWhen(
+                    orElse: () {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    },
+                    loaded: (products) {
+                      return products.isEmpty
+                          ? Container(
+                              width: MediaQuery.of(context).size.width / 3.5,
+                              decoration: BoxDecoration(
+                                color: Theme.of(context).primaryColorLight,
+                                borderRadius: BorderRadius.circular(
+                                    Dimensions.paddingSizeSmall),
+                              ),
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: Dimensions.paddingSizeSmall,
+                                      vertical: Dimensions.fontSizeSmall),
+                                  child: Text('Checkout',
+                                      style: titilliumSemiBold.copyWith(
+                                        fontSize: Dimensions.fontSizeDefault,
+                                        color: Colors.grey,
+                                      )),
+                                ),
+                              ),
+                            )
+                          : InkWell(
+                              onTap: () {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return const CheckoutPage();
+                                }));
+                              },
+                              child: Container(
+                                width: MediaQuery.of(context).size.width / 3.5,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).primaryColor,
+                                  borderRadius: BorderRadius.circular(
+                                      Dimensions.paddingSizeSmall),
+                                ),
+                                child: Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: Dimensions.paddingSizeSmall,
+                                        vertical: Dimensions.fontSizeSmall),
+                                    child: Text('Checkout',
+                                        style: titilliumSemiBold.copyWith(
+                                          fontSize: Dimensions.fontSizeDefault,
+                                          color: Theme.of(context).cardColor,
+                                        )),
+                                  ),
+                                ),
+                              ),
+                            );
+                    },
+                  );
                 },
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 3.5,
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
-                    borderRadius:
-                        BorderRadius.circular(Dimensions.paddingSizeSmall),
-                  ),
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: Dimensions.paddingSizeSmall,
-                          vertical: Dimensions.fontSizeSmall),
-                      child: Text('Checkout',
-                          style: titilliumSemiBold.copyWith(
-                            fontSize: Dimensions.fontSizeDefault,
-                            color: Theme.of(context).cardColor,
-                          )),
-                    ),
-                  ),
-                ),
               ),
             ),
           ])),
@@ -126,6 +160,11 @@ class CartPageState extends State<CartPage> {
                           );
                         },
                         loaded: (products) {
+                          if (products.isEmpty) {
+                            return const Center(
+                              child: Text('No Data'),
+                            );
+                          }
                           return ListView.builder(
                             itemCount: products.length,
                             padding: const EdgeInsets.all(0),

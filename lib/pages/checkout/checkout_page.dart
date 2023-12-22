@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_fic7_app/bloc/order/order_bloc.dart';
 import 'package:flutter_fic7_app/data/models/request/order_request_model.dart';
-import 'package:flutter_fic7_app/pages/base_widgets/payment/payment_page.dart';
 import 'package:flutter_fic7_app/utils/price_ext.dart';
 
 import '../../bloc/checkout/checkout_bloc.dart';
@@ -11,6 +10,7 @@ import '../../utils/custom_themes.dart';
 import '../../utils/dimensions.dart';
 import '../../utils/images.dart';
 import '../base_widgets/amount_widget.dart';
+import '../base_widgets/payment/payment_page.dart';
 
 class CheckoutPage extends StatefulWidget {
   const CheckoutPage({super.key});
@@ -212,6 +212,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     sellerId: 4,
                   );
                   context.read<OrderBloc>().add(OrderEvent.order(requestModel));
+                  context.read<CheckoutBloc>().add(const CheckoutEvent.clear());
                 },
                 child: Container(
                   height: 60,
